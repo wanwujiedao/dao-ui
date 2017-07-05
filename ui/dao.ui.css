@@ -1,0 +1,172 @@
+/*==============================================================================【element start】=================================================================================================*/
+pre {
+    border: 1px solid #878787;
+    border-radius: 12px;
+    background-color: antiquewhite;
+    line-height:25px;
+}
+
+/*==============================================================================【element end】=================================================================================================*/
+
+
+
+/*==============================================================================【effec start】=================================================================================================*/
+
+/*渐变*/
+.dao-gradient {
+    transition: 0.5s ease-out;
+    -ms-transition:0.5s ease-out;
+    -moz-transition: 0.5s ease-out;
+    -webkit-transition: 0.5s ease-out;
+}
+
+/*悬浮旋转*/
+.dao-rotate:hover {
+    transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+}
+
+.dao-rotate-half:hover {
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+}
+
+/*悬浮变大*/
+.dao-scale-lager:hover {
+    transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+}
+
+/*悬浮变小*/
+.dao-scale-small:hover {
+    transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -webkit-transform: scale(0.9);
+}
+/**
+旋转并放大
+ */
+.dao-rotate-scale:hover{
+    transform:  rotate(360deg) scale(1.1);
+    -ms-transform: rotate(360deg) scale(1.1);
+    -moz-transform:  rotate(360deg) scale(1.1);
+    -webkit-transform:  rotate(360deg) scale(1.1);
+}
+
+.dao-shadow{
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: #0c0c0c;
+    opacity: 0.3;
+    z-index: 998;
+    display: none;
+}
+.triangle-up {
+     width: 0;
+     height: 0;
+     border-left: 4px solid transparent;
+     border-right: 4px solid transparent;
+     border-bottom: 8px solid red;
+ }
+.triangle-down {
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 8px solid #1effc9;
+}
+.triangle-left {
+    width: 0;
+    height: 0;
+    border-top: 4px solid transparent;
+    border-right: 8px solid red;
+    border-bottom: 4px solid transparent;
+}
+.triangle-right {
+    width: 0;
+    height: 0;
+    border-top: 4px solid transparent;
+    border-left: 8px solid red;
+    border-bottom: 4px solid transparent;
+}
+/*==============================================================================【effec end】=================================================================================================*/
+
+/*==============================================================================【button start】=================================================================================================*/
+/*按钮*/
+.dao-btn {
+    display: inline-block;
+    padding: 5px 5px;
+    border-radius: 5px;
+    border: 1px solid #160e2c;
+    text-align: center;
+    margin-right: 2px;
+    margin-left: 2px;
+    cursor: pointer;
+}
+
+/*默认*/
+.dao-btn-default {
+    color: #ededff;
+    background-color: #2F4F4F;
+}
+
+.dao-btn-default:hover {
+    background-color: #ededff;
+    color: #2F4F4F;
+}
+
+/*警告*/
+.dao-btn-wraning {
+    color: #ededff;
+    background-color: #ff9f1d;
+}
+
+.dao-btn-wraning:hover {
+    background-color: #ededff;
+    color: #ff9f1d;
+}
+
+/*错误*/
+.dao-btn-error {
+    color: #ededff;
+    background-color: #a1112e;
+}
+
+.dao-btn-error:hover {
+    background-color: #ededff;
+    color: #a1112e;
+}
+
+/*消息*/
+.dao-btn-info {
+    color: #ededff;
+    background-color: #2192f5;
+}
+
+.dao-btn-info:hover {
+    background-color: #ededff;
+    color: #2192f5;
+}
+
+/*成功*/
+.dao-btn-success {
+    color: #ededff;
+    background-color: #148b00;
+}
+
+.dao-btn-success:hover {
+    background-color: #ededff;
+    color: #148b00;
+}
+
+/*==============================================================================【button end】=================================================================================================*/

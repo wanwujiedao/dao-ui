@@ -5,6 +5,9 @@ pre {
     background-color: antiquewhite;
     line-height:25px;
 }
+.hovertable{
+    background-color:#c9f9ec !important;
+}
 
 /*==============================================================================【element end】=================================================================================================*/
 
@@ -170,3 +173,47 @@ pre {
 }
 
 /*==============================================================================【button end】=================================================================================================*/
+
+/*==============================================================================【table start】=====================================================================================================*/
+
+.dao-table{
+    border-spacing: 0;
+    border-collapse: collapse;
+    background-color: transparent;
+    line-height: 20px;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+.dao-table>tbody>tr>td,.dao-table>tr>td {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+}
+table.dao-table>thead>tr>th,table.dao-table>tr>th {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    font-weight: bold;
+    border-bottom: 2px solid #ddd;
+}
+tr.dao-text-center>td,td.dao-text-center{
+    text-align: center;
+}
+tr.dao-text-right>td,td.dao-text-right{
+    text-align: right;
+}
+tr.dao-text-left>td,td.dao-text-left{
+    text-align: left;
+}
+
+table.dao-table-hover:hover{
+
+}
+table.dao-table-bordered>thead>tr>th,table.dao-table-bordered>tr>th,table.dao-table-bordered>tbody>tr>td,table.dao-table-bordered>tr>td{
+    border: 1px solid #ddd;
+}
+table.dao-table-striped,table.dao-table-hover{
+
+}

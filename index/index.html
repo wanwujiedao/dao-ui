@@ -73,7 +73,7 @@
     <div class="dao-scale-small dao-gradient" style="background-color: #35a696;">鼠标移到此处显示变小效果</div>
     <div class="dao-scale-num-2.3  dao-gradient" style="background-color: #3c39f5;">鼠标移到此处显示自定义大小效果</div>
     <div class="dao-rotate-scale dao-gradient-time-4.5" style="background-color: #a688f5;">旋转并放大</div>
-    <div class="dao-rotate-scale-num-2.5-3600 dao-gradient-time-4.5" style="background-color: #c8cef5;">自定义角度自定义放大倍数
+    <div class="dao-rotate-scale-num-4-36020 dao-gradient-time-4.5" style="background-color: #c8cef5;">自定义角度自定义放大倍数
     </div>
 
 </div>
@@ -133,7 +133,7 @@
     <a class="dao-btn dao-btn-wraning dao-gradient">警告</a>
     <a class="dao-btn dao-btn-error dao-gradient">错误</a>
     <a class="dao-btn dao-btn-success dao-gradient" title="这是成功按钮">成功</a>
-    <a class="dao-btn dao-btn-color-123456 dao-gradient">自定义颜色按钮</a>
+    <a class="dao-btn dao-btn-color-852369 dao-gradient">自定义颜色按钮</a>
 </div>
 
 <pre style="font-size: 20px;">
@@ -179,8 +179,144 @@
     <a class="dao-btn dao-btn-error dao-other dao-gradient" dao-title="请点击我，弹出一个自定义的框框"
        dao-title-detail="position:right;color:#A12DEF">Other</a>
 </div>
+<pre style="font-size: 20px;">
+
+    Alert:
+
+           daoBombBox.daoAlert({
+
+                content: '这是个默认按钮！',
+
+                onOk: function (p) {
+
+                    alert('样式比我好看，我也很无赖！')
+
+                }
+
+            });
 
 
+    Message:
+
+           daoBombBox.daoMessage({
+
+                offersetY: 20,
+
+                data: {
+
+                    msg: 'what fuck with you?'
+
+                },
+
+                content: '这是个消息按钮！',
+
+                onOk: function (p) {
+
+                    alert(p.msg)
+
+                }
+
+            });
+
+
+    daoOtherbombBox:
+
+           daoBombBox.daoOtherbombBox({
+
+                cancel: true,
+
+                close: true,
+
+                offersetY: 20,
+
+                data: {
+
+                    msg: 'I never know love is true,It\'s one here? just for you! '
+
+                },
+
+                content: '这是个错误按钮！',
+
+                onOk: function (p) {
+
+                    alert(p.msg)
+
+                }
+
+            });
+
+
+    相关属性说明：
+
+        title: '温馨提示',//标题
+
+        content: '您确认处理这件事？',//消息内容
+
+        okVal: '确认',//确认按钮
+
+        ok: true,//是否显示确认按钮（Alert 为 true）
+
+        okClose: true,//点击确认按钮是否关闭弹框
+
+        onOk: function () {//点击确认按钮触发事件
+
+            return false;
+
+        },
+
+        cancelVal: '取消',//取消按钮
+
+        cancel: false,//是否显示取消按钮（message 为 true）
+
+        cancelColse: true,//点击取消按钮是否关闭弹出
+
+        onCancel: function () {//点击取消按钮触发的事件
+
+            return false;
+
+        },
+
+        closeVal: '关闭',//关闭按钮
+
+        close: false,//是否显示关闭按钮
+
+        closeClose: true,//点击关闭按钮是否关闭弹窗
+
+        onClose: function () {//点击关闭按钮触发的事件
+
+            return false;
+
+        },
+
+        shadowbg：true,//是否显示遮罩层
+
+        shadowbgcolor: '#0c0c0c',//遮罩层颜色
+
+        wrapcolor: '#f4ffff',//弹窗背景颜色
+
+        wrapWidth: '280',//弹窗宽度
+
+        wrapHeight: '160',//弹窗高度
+
+        wrapOpacity: '0.9',//弹窗透明度
+
+        lineStyle: '1px dashed #999999',//分割线颜色
+
+        titleAlign: 'center',//标题位置
+
+        titleColor: '#001a35',//标题颜色
+
+        contentColor: '#333333',//内容颜色
+
+        contentHeight: '70',//内容高度
+
+        bobmPosition: 'default',//弹窗出现的位置（暂时居中，没做考虑）
+
+        offersetX: 0,//水平偏移量
+
+        offersetY: 0//竖直偏移量
+
+</pre>
 <div><h1 style="text-align:center;font-family:华文琥珀;">
     ========================================悬浮提示==============================================</h1></div>
 <div style="margin: auto;width: 400px;">
@@ -280,10 +416,10 @@
     <h1 style="text-align:center;font-family:华文琥珀;">
         ========================================表格==============================================</h1>
 </div>
-<div style="margin: auto;width: 400px;">
+<div style="width: 400px;float: left;margin-left: 35px;">
 
 <table class="dao-table">
-    <caption>表格名称</caption>
+    <caption>默认样式</caption>
     <thead>
         <tr>
             <th>时间</th>
@@ -320,9 +456,144 @@
     </tbody>
 </table>
 </div>
+<div style="width: 400px;float: left;margin-left: 35px;">
+
+    <table class="dao-table  dao-table-striped">
+        <caption>单线样式</caption>
+        <thead>
+        <tr>
+            <th>时间</th>
+            <th>姓名</th>
+            <th>事由</th>
+            <th>是否批准</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>4</td>
+            <td>万物皆导</td>
+            <td>去宇宙深区</td>
+            <td>是</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>万物皆导</td>
+            <td>去宇宙深区</td>
+            <td>是</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>万物皆导</td>
+            <td>去宇宙深区</td>
+            <td>是</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>万物皆导</td>
+            <td>去宇宙深区</td>
+            <td>是</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div style="width: 400px;float: left;margin-left: 35px;">
+
+    <table class="dao-table dao-table-hover">
+        <caption>悬浮样式</caption>
+        <thead>
+        <tr>
+            <th>时间</th>
+            <th>姓名</th>
+            <th>事由</th>
+            <th>是否批准</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>4</td>
+            <td>万物皆导</td>
+            <td>去宇宙深区</td>
+            <td>是</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>万物皆导</td>
+            <td>去宇宙深区</td>
+            <td>是</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>万物皆导</td>
+            <td>去宇宙深区</td>
+            <td>是</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>万物皆导</td>
+            <td>去宇宙深区</td>
+            <td>是</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div style="width: 400px;float: left;margin-left: 35px;">
+
+    <table class="dao-table dao-table-bordered">
+        <caption>边框样式</caption>
+        <thead>
+        <tr>
+            <th>时间</th>
+            <th>姓名</th>
+            <th>事由</th>
+            <th>是否批准</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>4</td>
+            <td>万物皆导</td>
+            <td>去宇宙深区</td>
+            <td>是</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>万物皆导</td>
+            <td>去宇宙深区</td>
+            <td>是</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>万物皆导</td>
+            <td>去宇宙深区</td>
+            <td>是</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>万物皆导</td>
+            <td>去宇宙深区</td>
+            <td>是</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div style="clear: both">&nbsp;</div>
+<pre style="font-size: 20px;">
+
+    默认样式：&lt;table class="dao-table"&gt;&lt;/table&gt;
+
+    单线样式：&lt;table class="dao-table dao-table-striped"&gt;&lt;/table&gt;
+
+    悬浮样式：&lt;table class="dao-table dao-table-hover"&gt;&lt;/table&gt;
+
+    边框样式：&lt;table class="dao-table dao-table-bordered"&gt;&lt;/table&gt;
+
+
+</pre>
+
 <div>
     <h1 style="text-align:center;font-family:华文琥珀;">
         ========================================表单==============================================</h1>
+
 </div>
 <div>
 
@@ -364,6 +635,7 @@
         ========================================导航栏==============================================</h1>
 </div>
 <div>
+
 </div>
 
 
@@ -375,4 +647,6 @@
 </div>
 </body>
 <script type="text/javascript" src="index.js"></script>
+<script type="text/javascript" src="idcard.js"></script>
+
 </html>

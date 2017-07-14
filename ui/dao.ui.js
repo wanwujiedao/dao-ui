@@ -379,6 +379,8 @@
 var daoCommon = {
     daogradientTimeNum: 0,
     daobtnColorNum: 0,
+    daotabletrNum:0,
+    daotableHovertrNum:0,
     daoTitle: {
         position: 'top',
         color: '#03401d',
@@ -479,8 +481,8 @@ var daoBombBox = {
         onClose: function () {
             return false;
         },
+        shadowbg:true,
         shadowbgcolor: '#0c0c0c',
-        shadowOpacity: '0.3',
         wrapcolor: '#f4ffff',
         wrapWidth: '280',
         wrapHeight: '160',
@@ -513,7 +515,6 @@ var daoBombBox = {
     daoOtherbombBox: function (opt) {
         var opts = $.extend({}, daoBombBox.bombBoxDefault, opt);
         var bombBoxNum = ++daoBombBox.bombBoxNum;
-        var shadow = '<div class="bxm-okcancel-shadow"></div>'
         var btnNum = 0;
         var btn = '';
         if (opts.ok) {
@@ -538,13 +539,15 @@ var daoBombBox = {
             '</div>';
 
         $('body').prepend(body);
-        //if(okCancelNum==1){
-        $('body').prepend(shadow);
+        if(opts.shadowbg){
+            var shadow = '<div class="bxm-okcancel-shadow"></div>'
+            $('body').prepend(shadow);
+            $('.bxm-okcancel-shadow').addClass('dao-shadow');
+            $('.bxm-okcancel-shadow').show();
+        }
 
 
         //样式
-        $('.bxm-okcancel-shadow').addClass('dao-shadow');
-        $('.bxm-okcancel-shadow').show();
         $('.bxm-okcancel-wrap').css({
             'position': 'fixed',
             'left': ($(window).width() / 2 - opts.wrapWidth / 2 - opts.offersetX) + 'px',
@@ -590,21 +593,27 @@ var daoBombBox = {
             opts.onOk(opts.data);
             if (opts.okClose) {
                 $(this).parents('.bxm-okcancel-wrap').remove();
-                $('.bxm-okcancel-shadow').remove();
+                if(opts.shadowbg) {
+                    $('.bxm-okcancel-shadow').remove();
+                }
             }
         });
         $(document).on('click', 'a.cancel-add-btn-' + bombBoxNum, function () {
             opts.onCancel(opts.data);
             if (opts.cancelColse) {
                 $(this).parents('.bxm-okcancel-wrap').remove();
-                $('.bxm-okcancel-shadow').remove();
+                if(opts.shadowbg) {
+                    $('.bxm-okcancel-shadow').remove();
+                }
             }
         });
         $(document).on('click', 'a.close-add-btn-' + bombBoxNum, function () {
             opts.onClose(opts.data);
             if (opts.closeClose) {
                 $(this).parents('.bxm-okcancel-wrap').remove();
-                $('.bxm-okcancel-shadow').remove();
+                if(opts.shadowbg) {
+                    $('.bxm-okcancel-shadow').remove();
+                }
             }
         });
 
@@ -637,6 +646,43 @@ $(function () {
             }
             daoCommon.daobtnColorNum = btnColor.length;
         }
+
+        var _table=$('table.dao-table-striped');
+        for(var count=0;count<_table.length;count++){
+            var _tr=$(_table[count]).find('tr');
+            if(_tr.length!=daoCommon.daotabletrNum){
+                for(var pox=0;pox<_tr.length;pox++){
+                    if(pox%2!=0){
+                        $(_tr[pox]).css({
+                            'background-color':'#F9F9F9'
+                        });
+                    }
+                }
+                daoCommon.daotabletrNum=_tr.length;
+            }
+        }
+
+        var _table1=$('table.dao-table-hover');
+        for(var count=0;count<_table1.length;count++){
+            var _tr=$(_table1[count]).find('tr');
+            if(_tr.length!=daoCommon.daotableHovertrNum){
+                for(var pox=0;pox<_tr.length;pox++){
+                    if(pox%2!=0){
+                        $(_tr[pox]).css({
+                            'background-color':'#F9F9F9'
+                        });
+                    }
+                }
+                $(_tr).hover(function () {
+                    $(this).addClass('hovertable');
+                },function () {
+                    $(this).removeClass('hovertable');
+                });
+                daoCommon.daotableHovertrNum=_tr.length;
+            }
+        }
+
+
 
     }, 200);
     /**
@@ -771,6 +817,8 @@ $(function () {
             '-webkit-transform': 'rotate(0deg) scale(1)'
         });
     });
+
+
 
 
 })
